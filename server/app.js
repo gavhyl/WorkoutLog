@@ -5,4 +5,5 @@ app.listen(3000, function(){
 });
 app.use('/api/test', function(req, res){
 	res.send("Hello World");
+app.use(require('./middleware/headers'));
 });
