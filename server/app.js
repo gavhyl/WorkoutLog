@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var sequelize=require('./db.js');
 var express = require('express');
 var app = express();
@@ -25,6 +27,7 @@ app.use(bodyParser.json());
 
 
 app.use(require('./middleware/headers'));
+app.use(require('./middleware/validate-session'));
 
 app.use('/api/user', require('./routes/user'));
 
