@@ -5,8 +5,9 @@ var Definition = sequelize.import('../models/definition');
 
 router.post('/', function(req,res){
 	//variables
-	var description = req.body.definition.desc;
-	var logType = req.body.definition.type;
+
+	var description = req.body.definitions.desc;
+	var logType = req.body.definitions.type;
 	var owner = req.user.id;
 	//methods
 	Definition
@@ -17,14 +18,14 @@ router.post('/', function(req,res){
 		})
 		.then(
 			//createSuccess fucntion
-			function creatSuccess(definition) {
+			function createSuccess(definition) {
 				//send a response as json
 				res.json({
 					definition: definition
 				});
 			},
 			//createErorr function
-			function creatError(err) {
+			function createError(err) {
 				res.send(500,err.message);
 			}
 			);
@@ -45,7 +46,7 @@ router.get('/', function(req,res){
 		},
 		//failure
 		function findAllError(err) {
-			res.send(55,err.message);
+			res.send(err.message);
 		}
 		);
 });

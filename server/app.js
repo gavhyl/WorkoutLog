@@ -19,7 +19,7 @@ var User = sequelize.import('./models/users');
 //matches the model we defined
 //Doesn't drop the db
 //var User = sequelize.import(__dirname + '\\models\\user');
-User.sync(); 
+sequelize.sync(); 
 //User.sync({ force: true }); //drops the table compeletly (line 27ish)
 
 app.use(bodyParser.json());
