@@ -1,9 +1,9 @@
 require('dotenv').config();
 
-var sequelize=require('./db.js');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var sequelize=require('./db.js');
 var User = sequelize.import('./models/users');
 
 
@@ -35,6 +35,10 @@ app.use('/api/user', require('./routes/user'));
 app.use('/api/login', require('./routes/session'));
 
 app.use('/api/definition',require('./routes/definition'));
+
+  app.use('/api/log', require('./routes/log'));
+
+ //app.use('api/log', require('.workouts/log'));
 
 app.use('/api/test', function(req, res){
 	res.send("Hello World");

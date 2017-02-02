@@ -2,7 +2,8 @@ $(function(){
 
 	var WorkoutLog = (function($, undefined){
 		var API_BASE = "http://localhost:3000/api/";
-		var userDefinitons = [];
+		var userDefinitions = [];
+		// var userLogs = [];
 		var setAuthHeader = function(sessionToken) {
 			window.localStorage.setItem("sessionToken", sessionToken);
 			//set the authorization header
@@ -30,10 +31,10 @@ $(function(){
 			return false;
 	}
 	});
-	$('a[data-toggle="tab"]').on("shown.bs.tab", function(e){
+	$("a[data-toggle='tab']").on("shown.bs.tab", function(e){
 		var target = $(e.target).attr("href"); //actiavted tab
 		if (target === "#log") {
-			WorkoutLog.log.setDefinitions();
+			 WorkoutLog.log.setDefinitions();
 		}
 
 		if (target === "#history") {
