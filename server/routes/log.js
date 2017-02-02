@@ -8,7 +8,7 @@ router.post('/', function(req,res){
 	//req has some body properties that have a username and pwd
 	var description = req.body.log.description;
 	var result = req.body.log.result;
-	var owner = req.user.id;
+	var user = req.user;
 	var definition = req.body.log.def;
 	//use our sequelize model to create log
 	Log

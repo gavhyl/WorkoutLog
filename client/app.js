@@ -40,7 +40,7 @@ $(function(){
 			WorkoutLog.log.setHistory();
 		}
 	});
-	//bind enter key
+		//bind enter key
 	$(document).on("keypress", function(e){
 		if (e.which === 13) {//emter key
 			if ($("#signup-modal").is(":visible")) {
@@ -51,6 +51,7 @@ $(function(){
 			}
 		}
 	});
+
 	//setheader if we
 	var token = window.localStorage.getItem("sessionToken");
 	if (token) {

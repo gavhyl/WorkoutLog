@@ -34,7 +34,7 @@ router.get('/', function(req,res){
 	//user variable
 	var userid = req.user.id;
 	Definition
-	//findAll by owner method
+	//findAll by owner method;
 	.findAll({
 		where: {owner:userid}
 	})
