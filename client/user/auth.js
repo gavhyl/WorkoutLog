@@ -11,7 +11,7 @@ $(function(){
 					password: password
 				}
 			};
-			//singup post
+			//signup post
 			var signup = $.ajax({
 				type: "POST",
 				url: WorkoutLog.API_BASE + "user",
